@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geoinformatics — Overview</title>
+  <style>
+    :root {
+      --skyblue: #87CEEB;
+      --deep-sky: #00BFFF;
+      --white: #ffffff;
+      --muted: #555555;
+      --card-radius: 14px;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    * { box-sizing: border-box; transition: all 0.4s ease-in-out; }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: #333;
+      line-height: 1.6;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .container {
+      width: 100%;
+      padding: 20px 40px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: var(--skyblue);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .brand-text .title { font-size: 28px; font-weight: 700; color: var(--deep-sky); }
+    .brand-text .tagline { font-size: 16px; color: var(--muted); }
+
+    nav a {
+      color: var(--deep-sky);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 20px;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .hero {
+      background: var(--skyblue);
+      color: var(--white);
+      border-radius: var(--card-radius);
+      padding: 40px 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      width: 100%;
+    }
+
+    .hero h1 { margin: 0 0 10px; font-size: 32px; }
+    .hero p { margin: 0; font-size: 16px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      width: 100%;
+    }
+
+    section.card {
+      background: var(--white);
+      border-radius: var(--card-radius);
+      padding: 30px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-left: 6px solid var(--deep-sky);
+      width: 100%;
+    }
+
+    section.card h2 { color: var(--deep-sky); margin-bottom: 10px; font-size: 24px; }
+    section.card p, section.card li { color: var(--muted); }
+    ul { padding-left: 20px; margin: 10px 0; }
+
+    .jobs {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .job {
+      border-left: 4px solid var(--skyblue);
+      padding: 15px;
+      border-radius: 8px;
+      background: #f0f8ff;
+    }
+    .job h3 { margin: 0 0 5px; color: var(--deep-sky); font-size: 20px; }
+    .job p { margin: 0; font-size: 15px; color: var(--muted); }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      header, nav { flex-direction: column; text-align: center; }
+      nav a { margin: 5px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">GEO</div>
+        <div class="brand-text">
+          <div class="title">Geoinformatics</div>
+          <div class="tagline">Mapping the future with spatial science</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#ug">UG Courses</a>
+        <a href="#eligibility">Eligibility</a>
+        <a href="#pg">PG Courses</a>
+        <a href="#jobs">Job Roles</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Welcome to Geoinformatics</h1>
+      <p>Geoinformatics involves collecting, analyzing, and visualizing geographic data to solve spatial problems using GIS, remote sensing, and GPS technologies.</p>
+    </section>
+
+    <div class="grid">
+      <section class="card" id="ug">
+        <h2>Undergraduate (UG) Courses</h2>
+        <p>Courses focused on GIS, remote sensing, cartography, and spatial data analysis.</p>
+        <ul>
+          <li><strong>B.Tech in Geoinformatics Engineering</strong> — GIS applications, remote sensing, and spatial database management.</li>
+          <li><strong>B.Sc. in Geography with Geoinformatics</strong> — Cartography, geospatial analysis, and environmental applications.</li>
+          <li><strong>B.Voc in Geospatial Technology</strong> — Practical training in GPS, GIS software, and spatial data interpretation.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="eligibility">
+        <h2>Eligibility (Typical)</h2>
+        <ul>
+          <li>10+2 with Physics, Chemistry, and Mathematics or Geography.</li>
+          <li>Minimum marks: 50–60% depending on institution.</li>
+          <li>Entrance exams: JEE Main, state-level CETs, or university-specific tests.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="pg">
+        <h2>Postgraduate (PG) Courses</h2>
+        <p>Advanced studies in geospatial science, remote sensing technologies, and spatial data modeling.</p>
+        <ul>
+          <li><strong>M.Tech / M.E. in Geoinformatics</strong> — Specializations in GIS software development, spatial analytics, and satellite data processing.</li>
+          <li><strong>M.Sc. in Remote Sensing and GIS</strong> — Earth observation, environmental monitoring, and spatial decision support systems.</li>
+          <li><strong>Ph.D. in Geoinformatics</strong> — Research in spatial data science, geospatial AI, and advanced cartography.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="jobs">
+        <h2>Job Roles & Descriptions</h2>
+        <div class="jobs">
+          <div class="job"><h3>GIS Analyst</h3><p>Analyzes spatial data and creates maps to support decision-making in various sectors.</p></div>
+          <div class="job"><h3>Remote Sensing Specialist</h3><p>Processes satellite imagery and aerial data for environmental and urban planning.</p></div>
+          <div class="job"><h3>Cartographer</h3><p>Designs and produces maps, integrating spatial data with graphical tools.</p></div>
+          <div class="job"><h3>Geospatial Data Scientist</h3><p>Applies data science and AI techniques to analyze complex geospatial datasets.</p></div>
+          <div class="job"><h3>Surveying Engineer</h3><p>Conducts land surveys and manages GPS data for construction and resource management.</p></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

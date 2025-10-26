@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colleges</title>
+    <style>
+        /* Background with image */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url("{{ url_for('static', filename='assests/res cou sugg.jpeg') }}") no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 20px;
+        }
+
+        /* Overlay card to make content readable */
+        .overlay {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 1200px;
+            width: 100%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #0277bd;
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .college-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .college-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            width: 260px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.25s, box-shadow 0.25s;
+            text-align: center;
+        }
+
+        .college-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .college-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #0288d1;
+        }
+
+        .college-code {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .college-url a {
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(135deg, #4fc3f7, #0288d1);
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+            display: inline-block;
+        }
+
+        .college-url a:hover {
+            background: linear-gradient(135deg, #0288d1, #01579b);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            font-weight: bold;
+            color: #0288d1;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>Course Available in these Colleges:</h1>
+
+        {% if colleges.empty %}
+            <p>No colleges found for this course.</p>
+        {% else %}
+            <div class="college-container">
+                {% for row in colleges.values %}
+                <div class="college-card">
+                    <div class="college-name">{{ row[1] }}</div>
+                    <div class="college-code">Code: {{ row[0] }}</div>
+                    <div class="college-url">
+                        <a href="{{ row[2] }}" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <a class="back-link" href="/">&#8592; Go Back</a>
+    </div>
+</body>
+</html>

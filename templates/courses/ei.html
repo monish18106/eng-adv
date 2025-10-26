@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Electronics & Instrumentation Engineering — Overview</title>
+  <style>
+    :root {
+      --skyblue: #87CEEB;
+      --deep-sky: #00BFFF;
+      --white: #ffffff;
+      --muted: #555555;
+      --card-radius: 14px;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    * { box-sizing: border-box; transition: all 0.4s ease-in-out; }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: #333;
+      line-height: 1.6;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .container {
+      width: 100%;
+      padding: 20px 40px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: var(--skyblue);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .brand-text .title { font-size: 28px; font-weight: 700; color: var(--deep-sky); }
+    .brand-text .tagline { font-size: 16px; color: var(--muted); }
+
+    nav a {
+      color: var(--deep-sky);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 20px;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .hero {
+      background: var(--skyblue);
+      color: var(--white);
+      border-radius: var(--card-radius);
+      padding: 40px 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      width: 100%;
+    }
+
+    .hero h1 { margin: 0 0 10px; font-size: 32px; }
+    .hero p { margin: 0; font-size: 16px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      width: 100%;
+    }
+
+    section.card {
+      background: var(--white);
+      border-radius: var(--card-radius);
+      padding: 30px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-left: 6px solid var(--deep-sky);
+      width: 100%;
+    }
+
+    section.card h2 { color: var(--deep-sky); margin-bottom: 10px; font-size: 24px; }
+    section.card p, section.card li { color: var(--muted); }
+    ul { padding-left: 20px; margin: 10px 0; }
+
+    .jobs {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .job {
+      border-left: 4px solid var(--skyblue);
+      padding: 15px;
+      border-radius: 8px;
+      background: #f0f8ff;
+    }
+    .job h3 { margin: 0 0 5px; color: var(--deep-sky); font-size: 20px; }
+    .job p { margin: 0; font-size: 15px; color: var(--muted); }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      header, nav { flex-direction: column; text-align: center; }
+      nav a { margin: 5px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">EI</div>
+        <div class="brand-text">
+          <div class="title">Electronics & Instrumentation Engineering</div>
+          <div class="tagline">Precision meets innovation</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#ug">UG Courses</a>
+        <a href="#eligibility">Eligibility</a>
+        <a href="#pg">PG Courses</a>
+        <a href="#jobs">Job Roles</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Welcome to Electronics & Instrumentation Engineering</h1>
+      <p>Electronics and Instrumentation Engineering focuses on the design and maintenance of instruments and control systems used in automation, manufacturing, and process industries. It blends electronics with measurement and control engineering.</p>
+    </section>
+
+    <div class="grid">
+      <section class="card" id="ug">
+        <h2>Undergraduate (UG) Courses</h2>
+        <p>Programs offering core knowledge in measurement systems, sensors, process control, and electronics.</p>
+        <ul>
+          <li><strong>B.Tech in Electronics & Instrumentation Engineering</strong> — Instrumentation systems, sensors, process control, and automation.</li>
+          <li><strong>B.Sc. in Instrumentation</strong> — Focuses on analytical instrumentation, electronics, and calibration techniques.</li>
+          <li><strong>B.Voc in Industrial Instrumentation</strong> — Practical training in control systems, PLCs, and field instrumentation.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="eligibility">
+        <h2>Eligibility (Typical)</h2>
+        <ul>
+          <li>10+2 with Physics, Mathematics, and Chemistry or Electronics/Instrumentation.</li>
+          <li>Minimum marks: 50–60% depending on institution.</li>
+          <li>Entrance exams: JEE Main, state-level CETs, or university-specific tests.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="pg">
+        <h2>Postgraduate (PG) Courses</h2>
+        <p>Advanced specialization in control systems, industrial automation, and sensor technologies.</p>
+        <ul>
+          <li><strong>M.Tech / M.E. in Instrumentation Engineering</strong> — Topics include advanced control, biomedical instrumentation, and robotics.</li>
+          <li><strong>M.Sc. in Instrumentation</strong> — Emphasis on analytical instruments, transducers, and signal conditioning.</li>
+          <li><strong>Ph.D. in Instrumentation & Control</strong> — Research in smart sensors, embedded systems, and industrial automation.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="jobs">
+        <h2>Job Roles & Descriptions</h2>
+        <div class="jobs">
+          <div class="job"><h3>Instrumentation Engineer</h3><p>Designs and manages systems for measuring and controlling process variables in industries.</p></div>
+          <div class="job"><h3>Control Systems Engineer</h3><p>Develops automation and feedback systems for efficient process control.</p></div>
+          <div class="job"><h3>Process Control Engineer</h3><p>Optimizes industrial processes through advanced control strategies and instrumentation.</p></div>
+          <div class="job"><h3>Calibration Engineer</h3><p>Ensures the accuracy and reliability of measurement instruments and sensors.</p></div>
+          <div class="job"><h3>Automation Engineer</h3><p>Implements PLC, SCADA, and DCS systems for industrial automation projects.</p></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Choose a Course</title>
+    <style>
+        /* Background with image and overlay */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: url("{{ url_for('static', filename='assests/course sugg index.jpeg') }}") no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Transparent overlay for readability */
+        .overlay {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #0277bd;
+            margin-bottom: 25px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 2px solid #81d4fa;
+            outline: none;
+            margin-bottom: 20px;
+            background: #ffffff;
+            transition: 0.3s;
+        }
+
+        select:focus {
+            border-color: #0288d1;
+            box-shadow: 0 0 8px rgba(2, 136, 209, 0.5);
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #4fc3f7, #0288d1);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #0288d1, #01579b);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>Select a Course</h1>
+        <form method="POST" action="/bycourses">
+            <select name="course">
+                <option value="AE">Aeronautical</option>
+                <option value="AIML">AI & Machine Learning</option>
+                <option value="AIDS">AI & Data Science</option>
+                <option value="AT">Automobile</option>
+                <option value="BM">Bio Medical</option>
+                <option value="BT">Biotech</option>
+                <option value="CC">Ceramic</option>
+                <option value="CHE">Chemical</option>
+                <option value="CSE">Computer Science</option>
+                <option value="CSBS">Computer & Business System</option>
+                <option value="CV">Civil</option>
+                <option value="ECE">Electronics and Communication</option>
+                <option value="EI">Electronics & Instrumentation</option>
+                <option value="ECO">Electrical & Computer Science</option>
+                <option value="EEE">Electrical & Electronics</option>
+                <option value="ENV">Environmental</option>
+                <option value="FH">Fashion</option>
+                <option value="GEO">Geo Informatics</option>
+                <option value="IC">Instrumentation & Control</option>
+                <option value="ID">Industrial</option>
+                <option value="IB">Industrial Bio</option>
+                <option value="IT">Information Technology</option>
+                <option value="LT">Leather</option>
+                <option value="MC">Mechatronics</option>
+                <option value="MCH">Mechanical</option>
+                <option value="MF">Manufacturing</option>
+                <option value="MI">Mining</option>
+                <option value="MS">Material Science</option>
+                <option value="MT">Metallurgical</option>
+                <option value="PHT">Pharma</option>
+                <option value="PD">Production</option>
+                <option value="PP">Printing & Packing</option>
+                <option value="RA">Robotics & Automation</option>
+                <option value="RP">Rubber & Plastic</option>
+                <option value="VLSI">VLSI - ECE</option>
+                <option value="PT">Petroleum</option>
+                <option value="AP">Apparel Technology</option>
+                <option value="TT">Textile Technology</option>
+            </select>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

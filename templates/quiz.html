@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Domain Suggestion Quiz</title>
+  <style>
+    :root{
+      --bg:#ffffff; --card:#f0f8ff; --accent:#0ea5e9; --muted:#6b7280;
+      --glass: rgba(0,0,0,0.03);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{
+      margin:0; background:linear-gradient(180deg,#f0f8ff 0%, #e0f2fe 60%); color:#1e293b;
+      min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;
+    }
+    .container{ width:100%; max-width:1000px; }
+    header{ text-align:center; margin-bottom:18px; }
+    h1{ margin:0; font-size:24px; letter-spacing:0.2px; }
+    p.lead{ color:var(--muted); margin:6px 0 0; }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius:12px; padding:18px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    form .q{
+      margin-bottom:14px; padding:10px; border-radius:8px; background:var(--glass);
+      display:flex; gap:12px; align-items:flex-start;
+    }
+    .q .num{ width:28px; height:28px; background:#0ea5e9; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; margin-top:2px; }
+    .q .text{ flex:1; }
+    .options{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+    .opt{
+      background:rgba(14,165,233,0.1); padding:8px 10px; border-radius:8px; cursor:pointer;
+      border:1px solid transparent; color:#1e293b; user-select:none;
+    }
+    .opt.selected{ border-color:var(--accent); color:#0c4a6e; background:rgba(14,165,233,0.2); }
+    .actions{ display:flex; gap:10px; margin-top:16px; align-items:center; }
+    button.primary{
+      background:linear-gradient(90deg,var(--accent), #38bdf8); color:#fff; border:none; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;
+    }
+    button.ghost{ background:transparent; color:var(--muted); border:1px solid rgba(0,0,0,0.1); padding:8px 12px; border-radius:8px; cursor:pointer; }
+    .results{ margin-top:18px; display:none; }
+    .results h3{ margin:0 0 8px 0; color:#0284c7; }
+    .scores{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
+    .score-box{ background:rgba(14,165,233,0.1); padding:10px 12px; border-radius:8px; min-width:140px; text-align:center;}
+    .domain-list{ display:flex; flex-direction:column; gap:8px; max-height:400px; overflow-y:auto; }
+    .domain-item{ background:rgba(14,165,233,0.05); padding:10px; border-radius:8px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; }
+    .domain-item:hover{ background:rgba(14,165,233,0.15); }
+    .muted{ color:var(--muted); font-size:13px; }
+    footer{ text-align:center; color:var(--muted); margin-top:12px; font-size:13px; }
+    @media (max-width:640px){
+      .score-box{ min-width:120px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Quick Quiz — find your study domains</h1>
+      <p class="lead">15 questions: 9 Maths, 3 Physics, 3 Chemistry. Answer honestly for best suggestions.</p>
+    </header>
+
+    <div class="card" role="main">
+      <form id="quizForm" autocomplete="off">
+        <!-- Insert your 15 question blocks here (Maths 9, Physics 3, Chemistry 3) -->
+        <!-- ... existing 15 questions from your code ... -->
+        <div style="margin-bottom:8px; font-weight:700; color:var(--muted)">Maths (9 questions)</div>
+
+        <!-- Q1 -->
+        <div class="q" data-subject="M">
+          <div class="num">1</div>
+          <div class="text">
+            <div>1) What is 12 × 15?</div>
+            <div class="options">
+              <div class="opt" data-value="A">A) 170</div>
+              <div class="opt" data-value="B" data-correct="true">B) 180</div>
+              <div class="opt" data-value="C">C) 190</div>
+              <div class="opt" data-value="D">D) 200</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="q" data-subject="M">
+          <div class="num">2</div>
+          <div class="text">
+            <div>2) Solve for x: 2x + 5 = 13</div>
+            <div class="options">
+              <div class="opt" data-value="A" data-correct="true">A) x = 4</div>
+              <div class="opt" data-value="B">B) x = 6</div>
+              <div class="opt" data-value="C">C) x = 2</div>
+              <div class="opt" data-value="D">D) x = 5</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="q" data-subject="M">
+          <div class="num">3</div>
+          <div class="text">
+            <div>3) The slope of the line passing through points (0,2) and (3,11) is:</div>
+            <div class="options">
+              <div class="opt" data-value="A">A) 2</div>
+              <div class="opt" data-value="B">B) 7</div>
+              <div class="opt" data-value="C" data-correct="true">C) 3</div>
+              <div class="opt" data-value="D">D) 9/2</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="q" data-subject="M">
+          <div class="num">4</div>
+          <div class="text">
+            <div>4) What is log10(1000)?</div>
+            <div class="options">
+              <div class="opt" data-value="A">A) 2</div>
+              <div class="opt" data-value="B" data-correct="true">B) 3</div>
+              <div class="opt" data-value="C">C) 1</div>
+              <div class="opt" data-value="D">D) 0</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="q" data-subject="M">
+          <div class="num">5</div>
+          <div class="text">
+            <div>5) Sum of first 5 natural numbers is:</div>
+            <div class="options">
+              <div class="opt" data-value="A" data-correct="true">A) 15</div>
+              <div class="opt" data-value="B">B) 10</div>
+              <div class="opt" data-value="C">C) 20</div>
+              <div class="opt" data-value="D">D) 25</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="q" data-subject="M">
+          <div class="num">6</div>
+          <div class="text">
+            <div>6) If matrix A = [[1,0],[0,1]], determinant is:</div>
+            <div class="options">
+              <div class="opt" data-value="A" data-correct="true">A) 1</div>
+              <div class="opt" data-value="B">B) 0</div>
+              <div class="opt" data-value="C">C) -1</div>
+              <div class="opt" data-value="D">D) 2</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="q" data-subject="M">
+          <div class="num">7</div>
+          <div class="text">
+            <div>7) If sequence is 2, 5, 8, ... what is the 4th term?</div>
+            <div class="options">
+              <div class="opt" data-value="A">A) 9</div>
+              <div class="opt" data-value="B" data-correct="true">B) 11</div>
+              <div class="opt" data-value="C">C) 10</div>
+              <div class="opt" data-value="D">D) 14</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="q" data-subject="M">
+          <div class="num">8</div>
+          <div class="text">
+            <div>8) Integral of 0 dx from 0 to 1 equals:</div>
+            <div class="options">
+              <div class="opt" data-value="A" data-correct="true">A) 0</div>
+              <div class="opt" data-value="B">B) 1</div>
+              <div class="opt" data-value="C">C) undefined</div>
+              <div class="opt" data-value="D">D) Infinity</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="q" data-subject="M">
+          <div class="num">9</div>
+          <div class="text">
+            <div>9) 7 × 8 = ?</div>
+            <div class="options">
+              <div class="opt" data-value="A">A) 54</div>
+              <div class="opt" data-value="B">B) 56</div>
+              <div class="opt" data-value="C" data-correct="true">C) 56</div>
+              <div class="opt" data-value="D">D) 63</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHYSICS (3) -->
+        <div style="margin-top:8px; margin-bottom:8px; font-weight:700; color:var(--muted)">Physics (3 questions)</div>
+
+        <!-- Q10 -->
+        <div class="q" data-subject="P">
+          <div class="num">10</div>
+          <div class="text">
+            <div>10) Force = mass × acceleration. If mass = 2 kg, acceleration = 3 m/s², force = ?</div>
+            <div class="options">
+              <div class="opt" data-value="A" data-correct="true">A) 6 N</div>
+              <div class="opt" data-value="B">B) 5 N</div>
+              <div class="opt" data-value="C">C) 1.5 N</div>
+              <div class="opt" data-value="D">D) 0.66 N</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="q" data-subject="P">
+          <div class="num">11</div>
+          <div class="text">
+            <div>11) Unit of electrical resistance is:</div>
+            <div class="options">
+              <div class="opt" data-value="A">A)watt</div>
+              <div class="opt" data-value="B" data-correct="true">B) Ω (Ohm)</div>
+              <div class="opt" data-value="C">C) Volt</div>
+              <div class="opt" data-value="D">D) Ampere</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="q" data-subject="P">
+          <div class="num">12</div>
+          <div class="text">
+            <div>12) Which law states energy cannot be created or destroyed?</div>
+            <div class="options">
+              <div class="opt" data-value="A">A) Newton's 2nd law</div>
+              <div class="opt" data-value="B" data-correct="true">B) Conservation of energy</div>
+              <div class="opt" data-value="C">C) Faraday's law</div>
+              <div class="opt" data-value="D">D) Ohm's law</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHEMISTRY (3) -->
+        <div style="margin-top:8px; margin-bottom:8px; font-weight:700; color:var(--muted)">Chemistry (3 questions)</div>
+
+        <!-- Q13 -->
+        <div class="q" data-subject="C">
+          <div class="num">13</div>
+          <div class="text">
+            <div>13) H₂O is an example of a:</div>
+            <div class="options">
+              <div class="opt" data-value="A">A) Acid</div>
+              <div class="opt" data-value="B">B) Base</div>
+              <div class="opt" data-value="C" data-correct="true">C) Compound</div>
+              <div class="opt" data-value="D">D) Element</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="q" data-subject="C">
+          <div class="num">14</div>
+          <div class="text">
+            <div>14) NaCl is common table salt. It is formed by:</div>
+            <div class="options">
+              <div class="opt" data-value="A" data-correct="true">A) Ionic bonding</div>
+              <div class="opt" data-value="B">B) Covalent bonding</div>
+              <div class="opt" data-value="C">C) Metallic bonding</div>
+              <div class="opt" data-value="D">D) Hydrogen bonding</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="q" data-subject="C">
+          <div class="num">15</div>
+          <div class="text">
+            <div>15) pH < 7 indicates:</div>
+            <div class="options">
+              <div class="opt" data-value="A" data-correct="true">A) Acidic</div>
+              <div class="opt" data-value="B">B) Neutral</div>
+              <div class="opt" data-value="C">C) Basic</div>
+              <div class="opt" data-value="D">D) Saline</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="primary" id="submitBtn">Submit & Get Suggestions</button>
+          <button type="button" class="ghost" id="resetBtn" title="Clear answers">Reset</button>
+          <div style="margin-left:auto; color:var(--muted); font-size:13px;">Questions: <span id="answeredCount">0</span>/15 answered</div>
+        </div>
+      </form>
+
+      <div class="results card" id="results">
+        <h3>Results & domain relation percentages</h3>
+        <div class="scores">
+          <div class="score-box">
+            <div class="muted">Maths (0–6)</div>
+            <div id="scoreMath" style="font-weight:800; font-size:18px">0</div>
+          </div>
+          <div class="score-box">
+            <div class="muted">Physics (0–2)</div>
+            <div id="scorePhys" style="font-weight:800; font-size:18px">0</div>
+          </div>
+          <div class="score-box">
+            <div class="muted">Chemistry (0–2)</div>
+            <div id="scoreChem" style="font-weight:800; font-size:18px">0</div>
+          </div>
+        </div>
+
+        <div class="muted" style="margin-bottom:8px;">All domain matches:</div>
+        <div class="domain-list" id="domainList"></div>
+
+        <div style="margin-top:12px;">
+          <button class="ghost" id="takeAgain">Take quiz again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const DOMAIN_PROFILE = [
+      {domain:"Aeronautical", m:5,p:2,c:1},{domain:"AI & Machine Learning", m:6,p:1,c:0},
+      {domain:"AI & Data Science", m:6,p:1,c:0},{domain:"Automobile", m:4,p:2,c:1},
+      {domain:"Bio Medical", m:3,p:1,c:2},{domain:"Biotech", m:2,p:0,c:2},
+      {domain:"Ceramic", m:2,p:1,c:2},{domain:"Chemical", m:2,p:0,c:2},
+      {domain:"Computer Science", m:6,p:1,c:0},{domain:"Computer & Business System", m:5,p:1,c:0},
+      {domain:"Civil", m:5,p:1,c:0},{domain:"Electronics and Communication", m:6,p:2,c:0},
+      {domain:"Electronics & Instrumentation", m:5,p:2,c:0},{domain:"Electrical & Computer Science", m:6,p:1,c:0},
+      {domain:"Electrical & Electronics", m:5,p:2,c:0},{domain:"Environmental", m:2,p:0,c:2},
+      {domain:"Fashion", m:2,p:0,c:2},{domain:"Food Tech", m:2,p:0,c:2},
+      {domain:"Geo Informatics", m:5,p:1,c:0},{domain:"Instrumentation & Control", m:5,p:2,c:0},
+      {domain:"Industrial", m:4,p:1,c:1},{domain:"Industrial Bio", m:2,p:0,c:2},
+      {domain:"Information Technology", m:6,p:1,c:0},{domain:"Leather", m:2,p:0,c:2},
+      {domain:"Mechatronics", m:5,p:2,c:0},{domain:"Mechanical", m:4,p:2,c:0},
+      {domain:"Manufacturing", m:4,p:1,c:1},{domain:"Mining", m:3,p:1,c:1},
+      {domain:"Material Science", m:3,p:1,c:1},{domain:"Metallurgy", m:3,p:1,c:1},
+      {domain:"Pharmaceutical", m:2,p:0,c:2},{domain:"Production", m:4,p:1,c:1},
+      {domain:"Printing & Packing", m:3,p:0,c:2},{domain:"Robotics & Automation", m:6,p:2,c:0},
+      {domain:"Rubber & Plastic", m:2,p:0,c:2},{domain:"VLSI - ECE", m:6,p:2,c:0},
+      {domain:"Petroleum", m:3,p:1,c:1},{domain:"Apparel Tech", m:2,p:0,c:2},{domain:"Textile", m:3,p:0,c:2}
+    ];
+
+    // Map domains → Flask routes
+    const DOMAIN_LINKS = {
+    "Aeronautical": "/courseandpath/aero",
+    "AI & Data Science": "/courseandpath/aids",
+    "AI & Machine Learning": "/courseandpath/aiml",
+    "Apparel Tech": "/courseandpath/appareltech",
+    "Automobile": "/courseandpath/auto",
+    "Bio Medical": "/courseandpath/biomed",
+    "Biotech": "/courseandpath/biotech",
+    "Ceramic": "/courseandpath/ceramic",
+    "Chemical": "/courseandpath/chemical",
+    "Civil": "/courseandpath/civil",
+    "Computer & Business System": "/courseandpath/csbs",
+    "Computer Science": "/courseandpath/cse",
+    "Electronics and Communication": "/courseandpath/ece",
+    "Electrical & Electronics": "/courseandpath/eee",
+    "Electronics & Instrumentation": "/courseandpath/ei",
+    "Electrical & Computer Science": "/courseandpath/elecse",
+    "Environmental": "/courseandpath/ev",
+    "Fashion": "/courseandpath/fash",
+    "Food Tech": "/courseandpath/ft",
+    "Geo Informatics": "/courseandpath/geo",
+    "Instrumentation & Control": "/courseandpath/ic",
+    "Industrial": "/courseandpath/ind",
+    "Industrial Bio": "/courseandpath/indbio",
+    "Information Technology": "/courseandpath/it",
+    "Leather": "/courseandpath/leather",
+    "Manufacturing": "/courseandpath/manu",
+    "Material Science": "/courseandpath/matsci",
+    "Mechanical": "/courseandpath/mech",
+    "Mechatronics": "/courseandpath/mecht",
+    "Metallurgy": "/courseandpath/metall",
+    "Mining": "/courseandpath/min",
+    "Pharmaceutical": "/courseandpath/ph",
+    "Printing & Packing": "/courseandpath/print",
+    "Production": "/courseandpath/pro",
+    "Petroleum": "/courseandpath/pt",
+    "Robotics & Automation": "/courseandpath/rob",
+    "Rubber & Plastic": "/courseandpath/rub",
+    "Textile": "/courseandpath/textile",
+    "VLSI - ECE": "/courseandpath/ece"
+};
+
+    const opts = document.querySelectorAll('.opt');
+    const answeredCountEl = document.getElementById('answeredCount');
+    const submitBtn = document.getElementById('submitBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const resultsEl = document.getElementById('results');
+    const scoreMathEl = document.getElementById('scoreMath');
+    const scorePhysEl = document.getElementById('scorePhys');
+    const scoreChemEl = document.getElementById('scoreChem');
+    const domainListEl = document.getElementById('domainList');
+    const takeAgainBtn = document.getElementById('takeAgain');
+
+    opts.forEach(o=>{
+      o.addEventListener('click',()=>{
+        const container = o.closest('.options');
+        container.querySelectorAll('.opt').forEach(x=>x.classList.remove('selected'));
+        o.classList.add('selected');
+        updateAnsweredCount();
+      });
+    });
+
+    function updateAnsweredCount(){
+      const total = document.querySelectorAll('.q').length;
+      let answered=0;
+      document.querySelectorAll('.q').forEach(q=>{
+        if(q.querySelector('.opt.selected')) answered++;
+      });
+      answeredCountEl.textContent = answered + '/' + total;
+    }
+
+    function resetQuiz(){
+      document.querySelectorAll('.opt.selected').forEach(x=>x.classList.remove('selected'));
+      updateAnsweredCount();
+      resultsEl.style.display='none';
+    }
+
+    resetBtn.addEventListener('click', resetQuiz);
+    takeAgainBtn.addEventListener('click', ()=>{resultsEl.style.display='none'; window.scrollTo({top:0,behavior:'smooth'});});
+
+    function gradeQuiz(){
+      const qs = document.querySelectorAll('.q');
+      let correctM=0,totalM=0, correctP=0,totalP=0, correctC=0,totalC=0;
+      qs.forEach(q=>{
+        const sub = q.getAttribute('data-subject');
+        const sel = q.querySelector('.opt.selected');
+        const correct = sel && sel.hasAttribute('data-correct');
+        if(sub==='M'){ totalM++; if(correct) correctM++; }
+        else if(sub==='P'){ totalP++; if(correct) correctP++; }
+        else if(sub==='C'){ totalC++; if(correct) correctC++; }
+      });
+      return {
+        correctCounts:{correctM,totalM,correctP,totalP,correctC,totalC},
+        marks:{
+          maths: Math.round((correctM/Math.max(1,totalM))*6),
+          physics: Math.round((correctP/Math.max(1,totalP))*2),
+          chemistry: Math.round((correctC/Math.max(1,totalC))*2)
+        }
+      };
+    }
+
+    function computeSimilarityProbs(m,p,c){
+      return DOMAIN_PROFILE.map(d=>{
+        const diffM = Math.abs(m-d.m)/6;
+        const diffP = Math.abs(p-d.p)/2;
+        const diffC = Math.abs(c-d.c)/2;
+        const avgDiff = (diffM+diffP+diffC)/3;
+        const relation = Math.max(0,1-avgDiff); 
+        return {domain:d.domain, prob: relation*100}; 
+      }).sort((a,b)=>b.prob - a.prob);
+    }
+
+    function showResults(){
+      const totalQs = document.querySelectorAll('.q').length;
+      let answeredQs = 0;
+      document.querySelectorAll('.q').forEach(q=>{
+        if(q.querySelector('.opt.selected')) answeredQs++;
+      });
+
+      if(answeredQs < totalQs){
+        alert(`Please answer all ${totalQs} questions before submitting!`);
+        return;
+      }
+
+      const grading = gradeQuiz();
+      const marks = grading.marks;
+      scoreMathEl.textContent = marks.maths;
+      scorePhysEl.textContent = marks.physics;
+      scoreChemEl.textContent = marks.chemistry;
+
+      const probs = computeSimilarityProbs(marks.maths, marks.physics, marks.chemistry);
+      domainListEl.innerHTML = '';
+      probs.forEach((d,i)=>{
+        const el = document.createElement('div');
+        el.className='domain-item';
+        el.innerHTML=`<div style="font-weight:700">${i+1}. ${d.domain}</div><div style="font-weight:800">${d.prob.toFixed(1)}%</div>`;
+        el.addEventListener('click', ()=>{
+          const link = DOMAIN_LINKS[d.domain];
+          if(link) window.location.href = link;
+        });
+        domainListEl.appendChild(el);
+      });
+
+      resultsEl.style.display='block';
+      window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});
+    }
+
+    submitBtn.addEventListener('click', showResults);
+
+    updateAnsweredCount();
+  </script>
+</body>
+</html>

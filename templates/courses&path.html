@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explore Courses / Domains</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f0f8ff;
+      color: #333;
+    }
+    header {
+      background-color: #e6f2ff;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid #b3d7ff;
+    }
+    header h1 {
+      color: #007acc;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+    }
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #d9ecff;
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.3s;
+      overflow: hidden;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 122, 204, 0.2);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1rem;
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      color: #005f99;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #e6f2ff;
+      border-top: 2px solid #b3d7ff;
+      font-size: 0.9rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Explore Courses / Domains</h1>
+    <p>Discover engineering & technology specializations</p>
+  </header>
+
+  <main class="grid-container">
+    <!-- 1. Aeronautical -->
+    <a href="/courseandpath/aero" class="card">
+      <img src="static/assests/aein.jpeg" alt="Aeronautical" loading="lazy">
+      <div class="card-content">
+        <h2>Aeronautical</h2>
+        <p>Design and development of aircraft, aerodynamics, and propulsion systems.</p>
+      </div>
+    </a>
+
+    <!-- 2. AI & Data Science -->
+    <a href="/courseandpath/aids" class="card">
+      <img src="static/assests/aidsin.jpeg" alt="AI & Data Science" loading="lazy">
+      <div class="card-content">
+        <h2>AI & Data Science</h2>
+        <p>Creating intelligent systems, analyzing data, and building predictive models.</p>
+      </div>
+    </a>
+
+    <!-- 3. AI & Machine Learning -->
+    <a href="/courseandpath/aiml" class="card">
+      <img src="static/assests/aimlin.jpg" alt="AI & Machine Learning" loading="lazy">
+      <div class="card-content">
+        <h2>AI & Machine Learning</h2>
+        <p>Designing intelligent algorithms, predictive models, and autonomous systems.</p>
+      </div>
+    </a>
+
+    <!-- 4. Apparel Technology -->
+    <a href="/courseandpath/apparel_tech" class="card">
+      <img src="static/assests/apparelin.jpg" alt="Apparel Technology" loading="lazy">
+      <div class="card-content">
+        <h2>Apparel Technology</h2>
+        <p>Integrates technology in fashion to design, produce, and distribute clothing.</p>
+      </div>
+    </a>
+
+    <!-- 5. Automobile -->
+    <a href="/courseandpath/auto" class="card">
+      <img src="static/assests/atoin.jpeg" alt="Automobile" loading="lazy">
+      <div class="card-content">
+        <h2>Automobile</h2>
+        <p>Design, manufacturing, and operation of vehicles and automotive systems.</p>
+      </div>
+    </a>
+
+    <!-- 6. Biomedical -->
+    <a href="/courseandpath/biomed" class="card">
+      <img src="static/assests/bmein.jpeg" alt="Biomedical" loading="lazy">
+      <div class="card-content">
+        <h2>Biomedical</h2>
+        <p>Combines biology, medicine, and engineering to design medical devices and healthcare solutions.</p>
+      </div>
+    </a>
+
+    <!-- 7. Biotechnology -->
+    <a href="/courseandpath/biotech" class="card">
+      <img src="static/assests/btin.jpg" alt="Biotechnology" loading="lazy">
+      <div class="card-content">
+        <h2>Biotechnology</h2>
+        <p>Applying biological processes to develop products in healthcare, agriculture, and industry.</p>
+      </div>
+    </a>
+
+    <!-- 8. Ceramic -->
+    <a href="/courseandpath/ceramic" class="card">
+      <img src="static/assests/cerain.jpeg" alt="Ceramic" loading="lazy">
+      <div class="card-content">
+        <h2>Ceramic</h2>
+        <p>Study and production of ceramic materials and their applications.</p>
+      </div>
+    </a>
+
+    <!-- 9. Chemical -->
+   <a href="/courseandpath/chemical" class="card">
+      <img src="static/assests/chein.jpg" alt="Chemical" loading="lazy">
+      <div class="card-content">
+        <h2>Chemical</h2>
+        <p>Process design, chemical reactions, and industrial chemical production.</p>
+      </div>
+    </a>
+
+    <!-- 10. Civil -->
+    <a href="/courseandpath/civil" class="card">
+      <img src="static/assests/civin.jpg" alt="Civil" loading="lazy">
+      <div class="card-content">
+        <h2>Civil</h2>
+        <p>Planning, designing, and overseeing construction of infrastructure like roads, buildings, and bridges.</p>
+      </div>
+    </a>
+
+    <!-- 11. Computer & Business System -->
+    <a href="/courseandpath/csbs" class="card">
+      <img src="static/assests/csbsin.jpeg" alt="Computer & Business System" loading="lazy">
+      <div class="card-content">
+        <h2>Computer & Business System</h2>
+        <p>Focuses on integrating computing and business applications for enterprise solutions.</p>
+      </div>
+    </a>
+
+    <!-- 12. Computer Science -->
+    <a href="/courseandpath/cse" class="card">
+      <img src="static/assests/csein.jpeg" alt="Computer Science" loading="lazy">
+      <div class="card-content">
+        <h2>Computer Science</h2>
+        <p>Study of algorithms, programming, data structures, and systems to build software applications.</p>
+      </div>
+    </a>
+
+    <!-- 13. Electrical & Computer Science -->
+    <a href="/courseandpath/ele_cse" class="card">
+      <img src="static/assests/elcsein.jpg" alt="Electrical & Computer Science" loading="lazy">
+      <div class="card-content">
+        <h2>Electrical & Computer Science</h2>
+        <p>Combines electrical engineering and computing for software-hardware integration.</p>
+      </div>
+    </a>
+
+    <!-- 14. Electrical & Electronics -->
+    <a href="/courseandpath/eee" class="card">
+      <img src="static/assests/eein.jpeg" alt="Electrical & Electronics" loading="lazy">
+      <div class="card-content">
+        <h2>Electrical & Electronics</h2>
+        <p>Power systems, circuits, electronic devices, and control engineering.</p>
+      </div>
+    </a>
+
+    <!-- 15. Electronics & Communication -->
+    <a href="/courseandpath/ece" class="card">
+      <img src="static/assests/ecein.jpg" alt="Electronics & Communication" loading="lazy">
+      <div class="card-content">
+        <h2>Electronics & Communication</h2>
+        <p>Design and development of electronic devices and communication systems.</p>
+      </div>
+    </a>
+
+    <!-- 16. Electronics & Instrumentation -->
+    <a href="/courseandpath/ei" class="card">
+      <img src="static/assests/ein.jpg" alt="Electronics & Instrumentation" loading="lazy">
+      <div class="card-content">
+        <h2>Electronics & Instrumentation</h2>
+        <p>Measurement systems, sensors, instrumentation, and control circuits.</p>
+      </div>
+    </a>
+
+    <!-- 17. Environmental -->
+    <a href="/courseandpath/ev" class="card">
+      <img src="static/assests/evin.jpg" alt="Environmental" loading="lazy">
+      <div class="card-content">
+        <h2>Environmental</h2>
+        <p>Study and management of environmental systems, pollution control, and sustainability.</p>
+      </div>
+    </a>
+
+    <!-- 18. Fashion -->
+    <a href="/courseandpath/fash" class="card">
+      <img src="static/assests/fasin.jpg" alt="Fashion" loading="lazy">
+      <div class="card-content">
+        <h2>Fashion</h2>
+        <p>Design, manufacturing, and technology behind garments, textiles, and fashion systems.</p>
+      </div>
+    </a>
+
+    <!-- 19. Food Technology -->
+    <a href="/courseandpath/ft" class="card">
+      <img src="static/assests/ftin.jpg" alt="Food Technology" loading="lazy">
+      <div class="card-content">
+        <h2>Food Technology</h2>
+        <p>Study and production of food products.</p>
+      </div>
+    </a>
+
+    <!-- 20. Geo Informatics -->
+    <a href="/courseandpath/geo" class="card">
+      <img src="static/assests/geoin.jpeg" alt="Geo Informatics" loading="lazy">
+      <div class="card-content">
+        <h2>Geo Informatics</h2>
+        <p>Application of geographic data analysis, GIS, and remote sensing technologies.</p>
+      </div>
+    </a>
+
+    <!-- 21. Industrial -->
+    <a href="/courseandpath/ind" class="card">
+      <img src="static/assests/indin.jpg" alt="Industrial" loading="lazy">
+      <div class="card-content">
+        <h2>Industrial</h2>
+        <p>Optimizing processes, systems, and operations for efficiency and productivity.</p>
+      </div>
+    </a>
+
+    <!-- 22. Industrial Biotechnology -->
+    <a href="/courseandpath/indbio" class="card">
+      <img src="static/assests/indbioin.jpg" alt="Industrial Biotechnology" loading="lazy">
+      <div class="card-content">
+        <h2>Industrial Biotechnology</h2>
+        <p>Use of biological systems for industrial production of chemicals, fuels, and materials.</p>
+      </div>
+    </a>
+
+    <!-- 23. Information Technology -->
+    <a href="/courseandpath/it" class="card">
+      <img src="static/assests/itin.jpg" alt="Information Technology" loading="lazy">
+      <div class="card-content">
+        <h2>Information Technology</h2>
+        <p>Focuses on networks, infrastructure, system administration, and IT services & support.</p>
+      </div>
+    </a>
+
+    <!-- 24. Instrumentation & Control -->
+    <a href="/courseandpath/ic" class="card">
+      <img src="static/assests/inconin.jpg" alt="Instrumentation & Control" loading="lazy">
+      <div class="card-content">
+        <h2>Instrumentation & Control</h2>
+        <p>Design and control of automated systems, feedback loops, and instrumentation.</p>
+      </div>
+    </a>
+
+    <!-- 25. Leather -->
+    <a href="/courseandpath/leather" class="card">
+      <img src="static/assests/ltin.jpeg" alt="Leather" loading="lazy">
+      <div class="card-content">
+        <h2>Leather Technology</h2>
+        <p>Study and production of leather products.</p>
+      </div>
+    </a>
+
+    <!-- 26. Manufacturing -->
+    <a href="/courseandpath/manu" class="card">
+      <img src="static/assests/manin.jpg" alt="Manufacturing" loading="lazy">
+      <div class="card-content">
+        <h2>Manufacturing</h2>
+        <p>Designing production systems, processes, and facilities for making goods.</p>
+      </div>
+    </a>
+
+    <!-- 27. Material Science -->
+    <a href="/courseandpath/matsci" class="card">
+      <img src="static/assests/mtin.jpeg" alt="Material Science" loading="lazy">
+      <div class="card-content">
+        <h2>Material Science</h2>
+        <p>Developing and studying materials (metals, ceramics, polymers) and their properties.</p>
+      </div>
+    </a>
+
+    <!-- 28. Mechanical -->
+    <a href="/courseandpath/mech" class="card">
+      <img src="static/assests/mechin.jpg" alt="Mechanical" loading="lazy">
+      <div class="card-content">
+        <h2>Mechanical</h2>
+        <p>Design, analysis, and manufacturing of mechanical systems and machines.</p>
+      </div>
+    </a>
+
+    <!-- 29. Mechatronics -->
+    <a href="/courseandpath/mecht" class="card">
+      <img src="static/assests/mectrin.jpg" alt="Mechatronics" loading="lazy">
+      <div class="card-content">
+        <h2>Mechatronics</h2>
+        <p>Field that combines mechanical, electronics, and computer science.</p>
+      </div>
+    </a>
+
+    <!-- 30. Metallurgical -->
+    <a href="/courseandpath/mecht" class="card">
+      <img src="static/assests/metin.jpg" alt="Metallurgical" loading="lazy">
+      <div class="card-content">
+        <h2>Metallurgical</h2>
+        <p>Extraction, processing, and characterization of metals and alloys.</p>
+      </div>
+    </a>
+
+    <!-- 31. Mining -->
+    <a href="/courseandpath/min" class="card">
+      <img src="static/assests/minin.jpeg" alt="Mining" loading="lazy">
+      <div class="card-content">
+        <h2>Mining</h2>
+        <p>Extraction, processing, and safety of minerals and ores from Earth.</p>
+      </div>
+    </a>
+
+    <!-- 32. Pharma -->
+    <a href="/courseandpath/ph" class="card">
+      <img src="static/assests/phin.jpeg" alt="Pharma" loading="lazy">
+      <div class="card-content">
+        <h2>Pharma</h2>
+        <p>Study and production of pharmaceutical drugs and medicines.</p>
+      </div>
+    </a>
+
+    <!-- 33. Petroleum -->
+    <a href="/courseandpath/pt" class="card">
+      <img src="static/assests/petin.jpg" alt="Petroleum" loading="lazy">
+      <div class="card-content">
+        <h2>Petroleum</h2>
+        <p>Exploration, extraction, and production of oil & gas resources.</p>
+      </div>
+    </a>
+
+    <!-- 34. Production -->
+    <a href="/courseandpath/pro" class="card">
+      <img src="static/assests/proin.jpeg" alt="Production" loading="lazy">
+      <div class="card-content">
+        <h2>Production</h2>
+        <p>Techniques and methods to manufacture products at scale with quality and efficiency.</p>
+      </div>
+    </a>
+
+    <!-- 35. Printing & Packaging -->
+    <a href="/courseandpath/print" class="card">
+      <img src="static/assests/printin.jpeg" alt="Printing & Packaging" loading="lazy">
+      <div class="card-content">
+        <h2>Printing & Packaging</h2>
+        <p>Design and processing of packaging, printing techniques, and materials.</p>
+      </div>
+    </a>
+
+    <!-- 36. Robotics & Automation -->
+    <a href="/courseandpath/rob" class="card">
+      <img src="static/assests/robatin.jpeg" alt="Robotics & Automation" loading="lazy">
+      <div class="card-content">
+        <h2>Robotics & Automation</h2>
+        <p>Design and control of robots, automation systems, and intelligent machines.</p>
+      </div>
+    </a>
+
+    <!-- 37. Rubber & Plastics -->
+    <a href="/courseandpath/rub" class="card">
+      <img src="static/assests/rubplain.jpeg" alt="Rubber & Plastics" loading="lazy">
+      <div class="card-content">
+        <h2>Rubber & Plastics</h2>
+        <p>Development, processing, and manufacturing of rubber and plastic materials and products.</p>
+      </div>
+    </a>
+
+    <!-- 38. Textile Technology -->
+    <a href="/courseandpath/textile" class="card">
+      <img src="static/assests/texin.jpeg" alt="Textile Technology" loading="lazy">
+      <div class="card-content">
+        <h2>Textile Technology</h2>
+        <p>Processing and production of yarns, fabrics, and technical textiles from fibers.</p>
+      </div>
+    </a>
+  </main>
+</body>
+</html>

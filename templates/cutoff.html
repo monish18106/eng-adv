@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Cutoff Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('{{ url_for("static", filename="assests/cin.jpg") }}') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .overlay {
+            position: fixed;
+            top:0; left:0; right:0; bottom:0;
+            background: rgba(255,255,255,0.05); /* slight overlay for readability */
+            z-index: -1;
+        }
+        .container {
+            max-width: 450px;
+            margin: 80px auto;
+            padding: 30px;
+            background: rgba(255,255,255,0.05); /* transparent card */
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            text-align: center;
+            backdrop-filter: blur(10px); /* smooth glass effect */
+            color: white; /* full white font */
+        }
+        h2 {
+            color: white;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 12px 0;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.5);
+            font-size: 16px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        input::placeholder { color: rgba(255,255,255,0.7); }
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+        }
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+        }
+        label { font-weight: 500; display: block; margin-top: 10px; text-align: left; color: white; }
+        select option { color: black; } /* options readable */
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <h2>College Cutoff Predictor</h2>
+        <form action="/predict" method="post">
+            <label>Enter Your Cutoff:</label>
+            <input type="number" name="cutoff" step="0.01" placeholder="Your Score" required>
+
+            <label>Select Category:</label>
+            <select name="category" required>
+                {% for cat in categories %}
+                <option value="{{ cat }}">{{ cat }}</option>
+                {% endfor %}
+            </select>
+
+
+            <label>Select Course:</label>
+  <select name="course" required>
+    {% for key, value in courses.items() %}
+        <option value="{{ key }}">{{ value }}</option>
+    {% endfor %}
+  </select>
+
+            <button type="submit">Predict Colleges</button>
+        </form>
+    </div>
+</body>
+</html>
